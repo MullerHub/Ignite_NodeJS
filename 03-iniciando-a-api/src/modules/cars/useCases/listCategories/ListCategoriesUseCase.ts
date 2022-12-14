@@ -6,12 +6,9 @@ class ListCategoriesUseCase {
   constructor(categoriesRepository: ICategoriesRepository) {
     this.categoriesRepository = categoriesRepository
   }
-
   execute(): Category[] {
     const categories = this.categoriesRepository.list()
-
     return categories
   }
 }
-
 export { ListCategoriesUseCase }
