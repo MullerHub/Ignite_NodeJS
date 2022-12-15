@@ -1,20 +1,19 @@
-import { Request, Response } from "express";
-import { ImportCategoriesUseCase } from "./ImportCategoriesUseCase";
+import { Request, Response } from 'express'
+import { ImportCategoriesUseCase } from './ImportCategoriesUseCase'
 
 class ImportCategoriesController {
-  private importCategoriesUseCase: ImportCategoriesUseCase;
+  private importCategoriesUseCase: ImportCategoriesUseCase
   constructor(importCategoriesUseCase: ImportCategoriesUseCase) {
-    this.importCategoriesUseCase = importCategoriesUseCase;
+    this.importCategoriesUseCase = importCategoriesUseCase
   }
 
   handle(request: Request, response: Response): Response {
-
-    const { file } = request;
+    const { file } = request
 
     this.importCategoriesUseCase.execute(file)
 
-    return response.send();
+    return response.send()
   }
 }
 
-export { ImportCategoriesController };
+export { ImportCategoriesController }
