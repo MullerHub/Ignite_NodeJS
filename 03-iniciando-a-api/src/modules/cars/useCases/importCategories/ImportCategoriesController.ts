@@ -1,19 +1,16 @@
 import { Request, Response } from 'express'
 import { ImportCategoriesUseCase } from './ImportCategoriesUseCase'
+import { container } from 'tsyringe'
 
 class ImportCategoriesController {
-  private importCategoriesUseCase: ImportCategoriesUseCase
-  constructor(importCategoriesUseCase: ImportCategoriesUseCase) {
-    this.importCategoriesUseCase = importCategoriesUseCase
-  }
-
-  handle(request: Request, response: Response): Response {
+  async handle(request: Request, response: Response): Promise<Response> {
+    const importCategoriesUseCase = container.resolve(ImportCategoriesUseCase)
     const { file } = request
 
-    this.importCategoriesUseCase.execute(file)
+    await importCategoriesUseCase.execute(file)
 
     return response.send()
   }
 }
 
-export { ImportCategoriesController }
+export { ImportCategoriesController } 

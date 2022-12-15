@@ -3,8 +3,8 @@ import multer from 'multer'
 
 import { CreateCategoryController } from '../modules/cars/useCases/createCategory/CreateCategoryController'
 
-import { listCategoriesController } from '../modules/cars/useCases/listCategories'
-import { importCategoriesController } from '../modules/cars/useCases/importCategories'
+import { ListCategoriesController } from '../modules/cars/useCases/listCategories/ListCategoriesController'
+import { ImportCategoriesController } from '../modules/cars/useCases/importCategories/ImportCategoriesController'
 
 const categoriesRoutes = Router()
 
@@ -13,6 +13,8 @@ const upload = multer({
 })
 
 const createCategoryController = new CreateCategoryController()
+const importCategoriesController = new ImportCategoriesController()
+const listCategoriesController = new ListCategoriesController()
 
 categoriesRoutes.post('/', createCategoryController.handle)
 
