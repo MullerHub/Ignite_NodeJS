@@ -38,7 +38,7 @@ class AuthenticateUserUseCase {
     }
 
     // Gerar jsonwebtoken
-    const token = sign({}, 'CodigoGeradoPorHash', {
+    const token = sign({}, 'NecessitaCriptografiaNesseExemploUsadoNaAuthenticateEnoMiddleware', {
       subject: user.id,
       expiresIn: '1d',
     })
