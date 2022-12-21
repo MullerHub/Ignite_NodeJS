@@ -13,12 +13,13 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
-    networks: -backend
+    networks:
+      - backend
   app:
     build: .
     container_name: rentx
     ports:
-      - 3333:3333
+      - 3334:3334
     volumes:
       - .:/usr/app
     networks:
