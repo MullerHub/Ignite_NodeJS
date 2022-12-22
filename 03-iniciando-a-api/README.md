@@ -9,7 +9,7 @@ Deve ser possivel listar todas as categorias
 Não deve ser possivel cadastrar um carro com uma placa já existente
 Não deve ser possivel alterar a placa de um carro já cadastrado
 O carro deve ser cadastrado, por padrão, com disponibilidade.
-O usuario responsavel pelo cadastro deve ser um usuario administrador
+* O usuario responsavel pelo cadastro deve ser um usuario administrador
 
 
 # Listagem de carros
