@@ -4,7 +4,7 @@ import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
 } from '@modules/cars/repositories/ISpecificationsRepository'
-import { Specification } from '../../infra/typeorm/entities/Specification'
+import { Specification } from '../entities/Specification'
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>
@@ -22,7 +22,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
 
   async findByName(name: string): Promise<Specification> {
     const specification = this.repository.findOne({
-      name,
+      name: name,
     })
     return specification
   }
