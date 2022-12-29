@@ -59,3 +59,5 @@ Deve ser possivel cadastrar um aluguel
 **RN**
 O aluguel deve ter duração minima de 24 horas
 Não deve ser possivel cadastrar um carro
+
+ajuste windows
