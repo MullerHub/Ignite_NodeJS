@@ -51,11 +51,8 @@ O usuario responsavel pelo cadastro deve ser um usuario administrador
 **RF**
 Deve ser possivel cadastrar um aluguel
 
-**RNF**
-
 
 **RN**
 O aluguel deve ter duração minima de 24 horas
-Não deve ser possivel cadastrar um carro
-
-ajuste windows
+Não deve ser possivel cadastrar um novo aluguel caso já exista um aberto para o mesmo usuario
+Não deve ser possivel cadastrar um novo aluguel caso já exista um aberto para o mesmo carro
