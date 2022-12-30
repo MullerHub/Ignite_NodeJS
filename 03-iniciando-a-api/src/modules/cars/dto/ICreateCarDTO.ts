@@ -9,6 +9,7 @@ interface ICreateCarDTO {
   fine_amount: number
   license_plate: string
   specifications?: Specification[]
+  id?: string
 }
 
 export { ICreateCarDTO }
