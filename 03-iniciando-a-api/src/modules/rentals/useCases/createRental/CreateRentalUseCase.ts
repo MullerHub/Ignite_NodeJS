@@ -1,3 +1,4 @@
+import { Rental } from '@modules/rentals/infra/typeorm/entities/Rental'
 import { IRentalsRepository } from '@modules/rentals/repositories/IRentalsRepository'
 import { AppError } from '@shared/errors/AppError'
 
@@ -8,15 +9,15 @@ interface IRequest {
 }
 
 class CreateRentalUseCase {
-  constructor(private rentalRepository: IRentalsRepository) {}
+  constructor(private rentalsRepository: IRentalsRepository) {}
 
   async execute({
     car_id,
     expected_return_date,
     user_id,
-  }: IRequest): Promise<void> {
+  }: IRequest): Promise<Rental> {
     // Não deve ser possivel cadastrar um novo aluguel caso já exista um aberto para o mesmo carro
-    const carUnavailable = await this.rentalRepository.findOpenRentalByCar(
+    const carUnavailable = await this.rentalsRepository.findOpenRentalByCar(
       car_id,
     )
 
@@ -26,7 +27,7 @@ class CreateRentalUseCase {
 
     //Não deve ser possivel cadastrar um novo aluguel caso já exista um aberto para o mesmo usuario
 
-    const rentalOpenToUser = await this.rentalRepository.findOpenRentalByUser(
+    const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(
       user_id,
     )
 
@@ -35,6 +36,13 @@ class CreateRentalUseCase {
     }
 
     // O aluguel deve ter duração minima de 24 horas
+
+    const rental = await this.rentalsRepository.create({
+      user_id,
+      car_id,
+      expected_return_date,
+    })
+    return rental
   }
 }
 
