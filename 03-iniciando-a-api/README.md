@@ -27,8 +27,6 @@ O usuario não precisar estar logado no sistema.
 
 **RF**
 Deve ser possivel cadastrar uma especificação para um carro
-Deve ser possivel listar todas as especificações
-Deve ser possivel listar todos os carros disponivels
 
 **RN**
 Não deve ser possivel cadastrar uma especificação para um carro não cadastrado
