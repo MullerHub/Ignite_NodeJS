@@ -55,6 +55,8 @@ describe('Create Rental', () => {
         expected_return_date: dayAdd24Hours,
       })
 
+      
+
       await createRentalUseCase.execute({
         user_id: '321',
         car_id: 'test_Car_igual',
