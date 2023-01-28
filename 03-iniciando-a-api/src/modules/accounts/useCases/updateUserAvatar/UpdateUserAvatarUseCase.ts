@@ -26,4 +26,5 @@ class UpdateUserAvatarUseCase {
   }
 }
 
+
 export { UpdateUserAvatarUseCase }
