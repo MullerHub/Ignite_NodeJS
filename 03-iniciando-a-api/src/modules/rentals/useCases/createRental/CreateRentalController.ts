@@ -20,3 +20,5 @@ class CreateRentalController {
 
 
 export { CreateRentalController }
+
+
