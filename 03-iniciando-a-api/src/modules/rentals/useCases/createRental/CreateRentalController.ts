@@ -17,4 +17,6 @@ class CreateRentalController {
   }
 }
 
+
+
 export { CreateRentalController }
