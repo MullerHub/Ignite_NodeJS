@@ -12,13 +12,9 @@ class CreateRentalController {
       car_id,
       expected_return_date,
       user_id: id,
-    }) 
+    })
     return response.status(201).json(rental)
   }
 }
 
-
-
 export { CreateRentalController }
-
-

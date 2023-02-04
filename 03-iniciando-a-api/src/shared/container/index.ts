@@ -1,6 +1,8 @@
 import { container } from 'tsyringe'
 
-import '@shared/container/providers'
+// import '@shared/container/providers'  Erro de procura de diretorio, resolução abaixo.
+
+// import './providers'
 
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository'
 import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository'
