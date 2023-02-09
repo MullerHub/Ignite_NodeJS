@@ -10,6 +10,8 @@ interface ICarsRepository {
     name?: string,
   ): Promise<Car[]>
   findById(id: string): Promise<Car>
+
+  updateAvailable(id: string, arg1: boolean): unknown // Ajustar, codigo temporario
 }
 
 export { ICarsRepository }
