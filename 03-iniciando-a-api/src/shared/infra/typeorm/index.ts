@@ -1,15 +1,15 @@
 import { Connection, createConnection, getConnectionOptions } from 'typeorm'
 
-export default async (host = 'database'): Promise<Connection> => {
+export default async (): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions()
 
   return createConnection(
     Object.assign(defaultOptions, {
-      host: process.env.NODE_ENV === 'test' ? 'localhost' : host,
-      database:
-        process.env.NODE_ENV === 'test'
-          ? 'rentx_test'
-          : defaultOptions.database,
+      host: process.env.TYPEORM_HOST,
+      database: process.env.TYPEORM_DATABASE,
+      username: process.env.TYPEORM_USERNAME,
+      port: process.env.TYPEORM_PORT,
+      type: process.env.TYPEORM_TYPE,
     }),
   )
 }
