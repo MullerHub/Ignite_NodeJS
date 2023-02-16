@@ -1,19 +1,17 @@
 import { Request, Response } from 'express'
 import { CreateDeliveryUseCase } from './CreateDeliveryUseCase'
 
-
 export class CreateDeliveryController {
   async handle(request: Request, response: Response) {
-    const { username, password } = request.body
+    const { id_client, item_name } = request.body
 
-    const createDeliveryUseCase =new CreateDeliveryUseCase()
+    const createDeliveryUseCase = new CreateDeliveryUseCase()
 
-    
-    const result = await .execute({
-      username,
-      password,
+    const delivery = await createDeliveryUseCase.execute({
+      id_client,
+      item_name,
     })
 
-    return response.json(result)
+    return response.json(delivery)
   }
 }
