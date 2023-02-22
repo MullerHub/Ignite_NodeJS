@@ -21,7 +21,10 @@ export async function ensureAuthenticateClient(
   const [, token] = authHeader.split(' ')
 
   try {
-    const { sub } = verify(token, 'ChaveSecretaComHashPara_o_Client') as IPayload
+    const { sub } = verify(
+      token,
+      'ChaveSecretaComHashPara_o_Client',
+    ) as IPayload
 
     request.id_client = sub
 

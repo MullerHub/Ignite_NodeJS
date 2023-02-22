@@ -1,6 +1,6 @@
+import { prisma } from '../../../database/prismaClient'
 import { compare } from 'bcrypt'
 import { sign } from 'jsonwebtoken'
-import { prisma } from '../../../database/prismaClient'
 
 interface IAuthenticateDeliveryman {
   username: string
@@ -16,7 +16,7 @@ export class AuthenticateDeliverymanUseCase {
     })
 
     if (!deliveryman) {
-      throw new Error('Username or password invalid!')
+      throw new Error('Entregador não encontrado!')
     }
 
     const passwordMatch = await compare(password, deliveryman.password)

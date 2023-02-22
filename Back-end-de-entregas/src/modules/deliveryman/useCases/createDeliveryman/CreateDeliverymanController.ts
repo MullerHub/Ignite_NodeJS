@@ -6,7 +6,6 @@ export class CreateDeliverymanController {
     const { username, password } = request.body
 
     const createDeliverymanUseCase = new CreateDeliverymanUseCase()
-
     const result = await createDeliverymanUseCase.execute({
       username,
       password,
