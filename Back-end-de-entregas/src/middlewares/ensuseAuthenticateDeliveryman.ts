@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import { verify } from 'jsonwebtoken'
 
 interface IPayload {
@@ -13,9 +13,7 @@ export async function ensureAuthenticateDeliveryman(
   const authHeader = request.headers.authorization
 
   if (!authHeader) {
-    return response.status(401).json({
-      message: 'Token missing',
-    })
+    return response.status(401).json({ message: 'Token missing' })
   }
 
   const [, token] = authHeader.split(' ')
@@ -28,12 +26,8 @@ export async function ensureAuthenticateDeliveryman(
 
     request.id_deliveryman = sub
 
-    console.log(sub)
-
     return next()
-  } catch (err) {
-    return response.status(401).json({
-      message: 'Invalid token!',
-    })
+  } catch (error) {
+    return response.status(401).json({ message: 'Invalid token!' })
   }
 }

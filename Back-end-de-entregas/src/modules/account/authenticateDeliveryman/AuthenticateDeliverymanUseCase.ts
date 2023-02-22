@@ -24,14 +24,10 @@ export class AuthenticateDeliverymanUseCase {
       throw new Error('Username or password invalid!')
     }
 
-    const token = sign(
-      { username },
-      'ChaveSecretaComHashDoisPara_o_Deliveryman',
-      {
-        subject: deliveryman.id,
-        expiresIn: '1d',
-      },
-    )
+    const token = sign({ username }, 'ChaveSecretaComHashPara_o_Deliveryman', {
+      subject: deliveryman.id,
+      expiresIn: '1d',
+    })
 
     return token
   }
