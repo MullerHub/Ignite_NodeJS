@@ -24,7 +24,7 @@ export class AuthenticateClientUseCase {
       throw new Error('Username or password invalid!')
     }
 
-    const token = sign({ username }, 'ChaveSecretaComHash', {
+    const token = sign({ username }, 'ChaveSecretaComHashPara_o_Client', {
       subject: client.id,
       expiresIn: '1d',
     })

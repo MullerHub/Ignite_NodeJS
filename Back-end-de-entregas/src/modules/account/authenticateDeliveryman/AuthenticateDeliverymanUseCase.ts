@@ -9,7 +9,7 @@ interface IAuthenticateDeliveryman {
 
 export class AuthenticateDeliverymanUseCase {
   async execute({ username, password }: IAuthenticateDeliveryman) {
-    const deliveryman = await prisma.deliveryMan.findFirst({
+    const deliveryman = await prisma.deliveryman.findFirst({
       where: {
         username,
       },
@@ -24,10 +24,14 @@ export class AuthenticateDeliverymanUseCase {
       throw new Error('Username or password invalid!')
     }
 
-    const token = sign({ username }, 'ChaveSecretaComHashDois', {
-      subject: deliveryman.id,
-      expiresIn: '1d',
-    })
+    const token = sign(
+      { username },
+      'ChaveSecretaComHashDoisPara_o_Deliveryman',
+      {
+        subject: deliveryman.id,
+        expiresIn: '1d',
+      },
+    )
 
     return token
   }
