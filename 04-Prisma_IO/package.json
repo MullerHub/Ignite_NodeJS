@@ -1,0 +1,20 @@
+{
+  "name": "ignite_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/MullerHub/Ignite_NodeJS.git",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MullerHub/Ignite_NodeJS/issues"
+  },
+  "homepage": "https://github.com/MullerHub/Ignite_NodeJS#readme",
+  "dependencies": {
+    "prisma": "^4.11.0"
+  } 
+}
